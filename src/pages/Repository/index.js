@@ -99,10 +99,7 @@ export default class Repository extends Component {
     });
 
     filters.forEach(filter => {
-      // eslint-disable-next-line no-unused-expressions
-      filter.state === state
-        ? (filter.activated = true)
-        : (filter.activated = false);
+      filter.activated = filter.state === state;
     });
 
     this.setState({ filters });
